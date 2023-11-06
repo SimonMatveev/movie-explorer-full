@@ -1,0 +1,23 @@
+.section-header {
+  margin: 0;
+  color: #000;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.88px;
+  padding: 0 0 23px;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+
+@media screen and (max-width: 425px) {
+  .section-header {
+    font-size: 18px;
+    letter-spacing: -0.72px;
+    padding-bottom: 29px;
+  }
+
+}

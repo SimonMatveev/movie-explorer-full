@@ -1,0 +1,140 @@
+.movie {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.movie__img {
+  width: 100%;
+  min-height: 201px;
+  flex-grow: 1;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.movie__text {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 14px 14px 0;
+  box-sizing: border-box;
+}
+
+.movie__title {
+  color: #000;
+  font-family: 'Inter', 'Arial', 'sans-serif';
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+  max-width: 250px;
+  min-height: 32px;
+}
+
+.movie__duration {
+  color: #A0A0A0;
+  text-align: center;
+  font-family: 'Inter', 'Arial', 'sans-serif';
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: .9;
+  padding: 4px 8px;
+  border-radius: 3px;
+  background-color: #F9F9F9;
+  margin: 0;
+}
+
+.movie__btn {
+  position: absolute;
+  z-index: 400;
+  top: 14px;
+  right: 14px;
+  border: none;
+  cursor: pointer;
+  transition: opacity .3s;
+}
+
+.movie__btn:hover {
+  opacity: .8;
+}
+
+.movie__btn_t_save {
+  color: #000;
+  text-align: center;
+  font-family: 'Inter', 'Arial', 'sans-serif';
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: .9;
+  padding: 6px 7px;
+  border-radius: 30px;
+  background-color: #F9F9F9;
+  display: none;
+}
+
+.movie:hover .movie__btn_t_save {
+  display: block;
+}
+
+.movie__btn_t_delete {
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  display: none;
+  background-color: #F9F9F9;
+  background-image: url('../../images/btn-cross.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.movie:hover .movie__btn_t_delete {
+  display: block;
+}
+
+.movie__btn_t_saved {
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background-color: #FF4062;
+  background-image: url('../../images/btn-check.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media screen and (max-width: 768px) {
+  .movie__text {
+    padding-top: 25px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .movie__img {
+    min-height: 190px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .movie__text {
+    padding-top: 16px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .movie__title {
+    font-size: 12px;
+    min-height: 31px;
+  }
+
+  .movie__btn {
+    top: 10px;
+    right: 10px;
+    display: block;
+  }
+
+  .movie__img {
+    min-height: 168px;
+  }
+}
