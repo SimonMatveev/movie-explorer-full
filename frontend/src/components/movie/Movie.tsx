@@ -2,11 +2,11 @@ import { FC, useContext } from 'react';
 import { BASE_URL } from '../../utils/constants';
 import './movie.css';
 import { SavedMoviesContext } from '../../contexts/savedMoviesContext';
-import { TMovieAll } from '../../types/types';
+import { IMovieBit, IMovieSaved, TMovieAll } from '../../types/types';
 interface IMovieProps {
   movie: TMovieAll;
   onSaved: boolean;
-  onClick: (movie: any) => void;
+  onClick: ((movie: IMovieSaved) => void) | ((movie: IMovieBit) => void);
 }
 
 const Movie: FC<IMovieProps> = ({ movie, onSaved, onClick }) => {
@@ -27,7 +27,7 @@ const Movie: FC<IMovieProps> = ({ movie, onSaved, onClick }) => {
   const durationConverted = movie.duration > 60 ? `${Math.floor(movie.duration / 60)}ч ${movie.duration % 60}м` : `${movie.duration}м`;
 
   const handleClick = () => {
-    onClick(movie);
+    onClick(movie as IMovieSaved & IMovieBit);
   }
 
   return (
