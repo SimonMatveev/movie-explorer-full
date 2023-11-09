@@ -97,7 +97,7 @@ function App() {
   const handleAllMovies = (movie: IMovieBit) => {
     const currentMovie = savedMovies.find(savedMovie => savedMovie.movieId === movie.id);
     if (currentMovie) {
-      handleDelete(currentMovie._id as string);
+      handleDelete(currentMovie._id);
     } else {
       handleAdd({
         country: movie.country,

@@ -15,7 +15,7 @@ interface ICardsProps {
 const Cards: FC<ICardsProps> = ({ allMoviesLength, searchedMoviesLength, moviesToRender, handleMovie, addMore }) => {
   const location = useLocation();
   const onSaved = location.pathname === '/saved-movies';
-  const isMoreLeft = !onSaved ? searchedMoviesLength as number > moviesToRender.length : null;
+  const isMoreLeft = !onSaved ? searchedMoviesLength! > moviesToRender.length : null;
   const notSearchedYet = (moviesToRender.length === 0 && allMoviesLength === 0);
 
   return (
