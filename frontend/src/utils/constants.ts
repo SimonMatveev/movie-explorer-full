@@ -20,3 +20,5 @@ export const NAME_VALIDATION_MSG = 'Только латиница, кирилл�
 export const DEFAULT_VALIDATION_MSG = 'Ошибка валидации';
 //shorts duration
 export const SHORTS_LENGHT = 40;
+
+

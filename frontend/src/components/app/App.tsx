@@ -31,6 +31,7 @@ function App() {
   const navigate = useNavigate();
   const onProfile = location.pathname === '/profile';
 
+
   const getData = () => {
     setIsLoading(true);
     Promise.all([mainApi.getMe(), mainApi.getMovies()])
