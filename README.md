@@ -12,8 +12,8 @@
 
 ## Стек технологий
 
-* **Фронтенд** - HTML, JS, CSS, TS, React.
-* **Бэкенд** - Node, Express.js, Mongo DB.
+* **Фронтенд** - HTML, TypeScript, CSS, React.
+* **Бэкенд** - Node, JS, Express.js, Mongo DB.
   
 ## Запуск проекта 
 
