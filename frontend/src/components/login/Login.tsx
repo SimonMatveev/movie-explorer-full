@@ -19,7 +19,8 @@ const inputs = [
       pattern: REG_EXP_EMAIL,
       autoComplete: 'email',
     },
-  }, {
+  },
+  {
     name: 'password',
     nameText: 'Пароль',
     type: EInputType.PASSWORD,
@@ -31,7 +32,7 @@ const inputs = [
   },
 ];
 
-const Login: FC<ILoginProps> = ({ signin, loginErr, isFormLoading, }) => {
+const Login: FC<ILoginProps> = ({ signin, loginErr, isFormLoading }) => {
   return (
     <section className='login'>
       <AuthForm
@@ -47,6 +48,6 @@ const Login: FC<ILoginProps> = ({ signin, loginErr, isFormLoading, }) => {
       />
     </section>
   );
-}
+};
 
 export default Login;

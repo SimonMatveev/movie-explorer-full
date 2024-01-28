@@ -37,7 +37,7 @@
 }
 
 .profile__row:not(:last-of-type) {
-  border-bottom: 1px solid #E8E8E8;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .profile__text {
@@ -81,11 +81,11 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .profile__btn:not(:disabled):hover {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .profile__btn_t_edit {
@@ -93,7 +93,7 @@
 }
 
 .profile__btn_t_exit {
-  color: #FF4062;
+  color: #ff4062;
 }
 
 .profile__btn_t_submit {
@@ -105,16 +105,16 @@
 }
 
 .profile__btn_t_submit:not(:disabled):hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .profile__btn_disabled {
-  background-color: #F8F8F8;
-  color: #c2c2c2
+  background-color: #f8f8f8;
+  color: #c2c2c2;
 }
 
 .profile__error {
-  color: #FF004C;
+  color: #ff004c;
   text-align: center;
   font-family: 'Inter', 'Arial', 'sans-serif';
   font-size: 11px;
@@ -129,7 +129,7 @@
 }
 
 .profile__input-error {
-  color: #FF004C;
+  color: #ff004c;
   text-align: center;
   font-family: 'Inter', 'Arial', 'sans-serif';
   font-size: 11px;
@@ -144,7 +144,6 @@
 }
 
 @media screen and (max-width: 768px) and (min-width: 426px) {
-
   .profile__form {
     padding-top: 40px;
     padding-bottom: 0;

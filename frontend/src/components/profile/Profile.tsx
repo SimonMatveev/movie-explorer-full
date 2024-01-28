@@ -1,4 +1,11 @@
-import { ChangeEventHandler, FC, FormEventHandler, useContext, useEffect, useState } from 'react';
+import {
+  ChangeEventHandler,
+  FC,
+  FormEventHandler,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 import './profile.css';
 import useFormAndValidation from '../../hooks/useFormAndValidation';
 import { REG_EXP_EMAIL, REG_EXP_NAME } from '../../utils/constants';
@@ -12,37 +19,43 @@ interface IProfileProps {
   isFormLoading: boolean;
 }
 
-const Profile: FC<IProfileProps> = ({ signout, editProfile, profileErr, isFormLoading, }) => {
+const Profile: FC<IProfileProps> = ({
+  signout,
+  editProfile,
+  profileErr,
+  isFormLoading,
+}) => {
   const currentUser = useContext(CurrentUserContext);
   const [isEditing, setIsEditing] = useState(false);
   const [isUnchanged, setIsUnchanged] = useState(true);
-  const { resetForm, values, handleChange, errors, isValid, setIsValid } = useFormAndValidation();
+  const { resetForm, values, handleChange, errors, isValid, setIsValid } =
+    useFormAndValidation();
 
   const handleInputChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     handleChange(e);
     setIsUnchanged(e.target.value === currentUser?.[e.target.name as keyof IPatchMe]);
-  }
+  };
 
   const handleEditing = () => {
     setIsEditing(true);
     setIsValid(true);
-  }
+  };
 
   const handleSubmit: FormEventHandler = (e) => {
     e.preventDefault();
     editProfile({ name: values.name, email: values.email });
-  }
+  };
 
   useEffect(() => {
     resetForm({
       name: currentUser?.name,
       email: currentUser?.email,
     });
-  }, [])
+  }, []);
 
   useEffect(() => {
     setIsEditing(false);
-  }, [currentUser])
+  }, [currentUser]);
 
   return (
     <section className='profile'>
@@ -62,7 +75,9 @@ const Profile: FC<IProfileProps> = ({ signout, editProfile, profileErr, isFormLo
             pattern={REG_EXP_NAME}
             required
           />
-          {errors['name'] && <span className="profile__input-error">{errors['name']}</span>}
+          {errors['name'] && (
+            <span className='profile__input-error'>{errors['name']}</span>
+          )}
         </fieldset>
         <fieldset className='profile__row'>
           <p className='profile__text profile__text_header'>E-mail</p>
@@ -76,19 +91,40 @@ const Profile: FC<IProfileProps> = ({ signout, editProfile, profileErr, isFormLo
             pattern={REG_EXP_EMAIL}
             required
           />
-          {errors['email'] && <span className="profile__input-error">{errors['email']}</span>}
+          {errors['email'] && (
+            <span className='profile__input-error'>{errors['email']}</span>
+          )}
         </fieldset>
         {profileErr && <p className='profile__error'>{profileErr}</p>}
-        {!isEditing ? <>
-          <button type='button' className='profile__btn profile__btn_t_edit' onClick={handleEditing}>Редактировать</button>
-          <button type='button' className='profile__btn profile__btn_t_exit' onClick={signout}>Выйти из аккаунта</button>
-        </> :
-          <button type='submit' className={`profile__btn profile__btn_t_submit${!isValid || isFormLoading || isUnchanged ? ' profile__btn_disabled' : ''}`} disabled={!isValid || isFormLoading || isUnchanged}>{!isFormLoading ? 'Сохранить' : 'Сохранение...'}</button>
-        }
-
+        {!isEditing ? (
+          <>
+            <button
+              type='button'
+              className='profile__btn profile__btn_t_edit'
+              onClick={handleEditing}
+            >
+              Редактировать
+            </button>
+            <button
+              type='button'
+              className='profile__btn profile__btn_t_exit'
+              onClick={signout}
+            >
+              Выйти из аккаунта
+            </button>
+          </>
+        ) : (
+          <button
+            type='submit'
+            className={`profile__btn profile__btn_t_submit${!isValid || isFormLoading || isUnchanged ? ' profile__btn_disabled' : ''}`}
+            disabled={!isValid || isFormLoading || isUnchanged}
+          >
+            {!isFormLoading ? 'Сохранить' : 'Сохранение...'}
+          </button>
+        )}
       </form>
     </section>
   );
-}
+};
 
 export default Profile;

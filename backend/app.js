@@ -14,7 +14,7 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { DB_URL_DEV } = require('./utils/config');
 const ORIGINS = require('./utils/origins');
 
-const { PORT = 3000, NODE_ENV, DB_URL } = process.env;
+const { PORT = 3001, NODE_ENV, DB_URL } = process.env;
 
 mongoose.connect(NODE_ENV === 'production' ? DB_URL : DB_URL_DEV);
 const app = express();
@@ -23,10 +23,12 @@ app.use(cookieParser());
 app.use(helmet());
 app.use(requestLogger);
 app.use(limiter);
-app.use(cors({
-  origin: ORIGINS,
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: ORIGINS,
+    credentials: true,
+  })
+);
 
 app.use('/', require('./routes/index'));
 

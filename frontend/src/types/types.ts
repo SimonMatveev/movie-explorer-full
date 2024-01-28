@@ -1,6 +1,6 @@
 export type Data = {
   data: object;
-}
+};
 
 export interface IMoviesApiPrors {
   baseUrl: string;
@@ -27,9 +27,9 @@ export interface IMovieBit extends IMovie {
     formats: {
       thumbnail: {
         url: string;
-      }
-    }
-  }
+      };
+    };
+  };
 }
 
 export interface IMovieSaved extends IMovie {
@@ -46,14 +46,14 @@ export type TMovieSavedInput = Optional<IMovieSaved, '_id' | 'id'>;
 export type TMovieAll = IMovieBit | IMovieSaved;
 
 export interface IPatchMe {
-  name: string,
-  email: string,
+  name: string;
+  email: string;
 }
 
 export interface ISignup extends IPatchMe {
   password: string;
 }
-export interface ISignin extends Omit<ISignup, 'name'> { }
+export interface ISignin extends Omit<ISignup, 'name'> {}
 
 export interface IUserData {
   data: IPatchMe;
@@ -78,7 +78,7 @@ export interface ISigninData {
 export interface ISignoutData {
   data: {
     message: string;
-  }
+  };
 }
 
 export enum EInputType {

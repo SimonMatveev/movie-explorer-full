@@ -1,5 +1,11 @@
 import { useState, useCallback, ChangeEvent } from 'react';
-import { DEFAULT_VALIDATION_MSG, EMAIL_VALIDATION_MSG, NAME_VALIDATION_MSG, REG_EXP_EMAIL, REG_EXP_NAME } from '../utils/constants';
+import {
+  DEFAULT_VALIDATION_MSG,
+  EMAIL_VALIDATION_MSG,
+  NAME_VALIDATION_MSG,
+  REG_EXP_EMAIL,
+  REG_EXP_NAME,
+} from '../utils/constants';
 
 export default function useFormAndValidation() {
   const [values, setValues] = useState<{ [key: string]: string }>({});
@@ -20,11 +26,14 @@ export default function useFormAndValidation() {
     setIsValid(e.target.closest('form')?.checkValidity() || false);
   };
 
-  const resetForm = useCallback((newValues = {}, newErrors = {}, newIsValid = false) => {
-    setValues(newValues);
-    setErrors(newErrors);
-    setIsValid(newIsValid);
-  }, [setValues, setErrors, setIsValid]);
+  const resetForm = useCallback(
+    (newValues = {}, newErrors = {}, newIsValid = false) => {
+      setValues(newValues);
+      setErrors(newErrors);
+      setIsValid(newIsValid);
+    },
+    [setValues, setErrors, setIsValid]
+  );
 
   return { values, handleChange, errors, isValid, resetForm, setValues, setIsValid };
 }

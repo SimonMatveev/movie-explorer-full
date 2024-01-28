@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import { SHORTS_LENGHT } from "../utils/constants";
-import { TMovieAll } from "../types/types";
+import { useState, useEffect } from 'react';
+import { SHORTS_LENGHT } from '../utils/constants';
+import { TMovieAll } from '../types/types';
 
 interface IUseMoviesProps {
   getAllMovies: () => void;
@@ -10,25 +10,34 @@ interface IUseMoviesProps {
 }
 
 const useMovies = ({ getAllMovies, movies, name, needsSaving }: IUseMoviesProps) => {
-  const [searchInput, setSearchInput] = useState<string>(localStorage.getItem(`searchInput-${name}`) || '');
-  const [isShortsChecked, setIsShortsChecked] = useState<boolean>(JSON.parse(localStorage.getItem(`shorts-${name}`) as string) || false);
+  const [searchInput, setSearchInput] = useState<string>(
+    localStorage.getItem(`searchInput-${name}`) || ''
+  );
+  const [isShortsChecked, setIsShortsChecked] = useState<boolean>(
+    JSON.parse(localStorage.getItem(`shorts-${name}`) as string) || false
+  );
   const [searchedMovies, setSearchedMovies] = useState<TMovieAll[]>([]);
   const [isSearching, setIsSearching] = useState(false);
 
   const searchMovies = () => {
     if (needsSaving) localStorage.setItem(`searchInput-${name}`, searchInput);
     const regExp = new RegExp(searchInput.toLowerCase());
-    setSearchedMovies(movies.filter(movie => {
-      if (isShortsChecked && movie.duration > SHORTS_LENGHT) return false;
-      return (regExp.test(movie.nameEN.toLowerCase()) || regExp.test(movie.nameRU.toLowerCase()));
-    }));
-  }
+    setSearchedMovies(
+      movies.filter((movie) => {
+        if (isShortsChecked && movie.duration > SHORTS_LENGHT) return false;
+        return (
+          regExp.test(movie.nameEN.toLowerCase()) ||
+          regExp.test(movie.nameRU.toLowerCase())
+        );
+      })
+    );
+  };
 
   const startSearch = () => {
     if (movies.length === 0) {
       getAllMovies();
     } else setIsSearching(true);
-  }
+  };
 
   useEffect(() => {
     if (movies.length > 0) startSearch();
@@ -56,6 +65,6 @@ const useMovies = ({ getAllMovies, movies, name, needsSaving }: IUseMoviesProps)
     setSearchedMovies,
     isSearching,
   };
-}
+};
 
 export default useMovies;

@@ -32,11 +32,11 @@ function deleteMovie(req, res, next) {
   Movie.findById(req.params.movieId)
     .then((movie) => {
       if (!movie) throw new NotFoundError(DEL_MOVIE_NOT_FOUND_ERR);
-      if (movie.owner.toString() !== req.user._id) throw new DelError(DEL_MOVIE_NOT_OWN_ERR);
-      return Movie.deleteOne(movie)
-        .then(() => {
-          res.send({ data: movie });
-        });
+      if (movie.owner.toString() !== req.user._id)
+        throw new DelError(DEL_MOVIE_NOT_OWN_ERR);
+      return Movie.deleteOne(movie).then(() => {
+        res.send({ data: movie });
+      });
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {

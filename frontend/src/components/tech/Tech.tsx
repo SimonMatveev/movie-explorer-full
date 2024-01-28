@@ -9,7 +9,8 @@ const Tech: FC = () => {
         <SectionHeader text={'Технологии'} />
         <h3 className='tech__title'>7 технологий</h3>
         <p className='tech__text'>
-          На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.
+          На курсе веб-разработки мы освоили технологии, которые применили в дипломном
+          проекте.
         </p>
         <ul className='tech__cards'>
           <li className='tech__card'>HTML</li>
@@ -23,6 +24,6 @@ const Tech: FC = () => {
       </div>
     </section>
   );
-}
+};
 
 export default Tech;

@@ -19,15 +19,15 @@
   font-weight: 500;
   line-height: normal;
   border-radius: 6px;
-  background: #F9F9F9;
+  background: #f9f9f9;
   border: none;
   align-self: center;
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .cards__more:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .cards__not-found {
@@ -48,7 +48,7 @@
   line-height: normal;
 }
 
-@media screen and (max-width:1020px) {
+@media screen and (max-width: 1020px) {
   .cards {
     grid-template-columns: repeat(2, minmax(300px, 1fr));
     padding-top: 81px;
@@ -73,5 +73,6 @@
     width: 240px;
   }
 
-  .cards__not-found-text {}
+  .cards__not-found-text {
+  }
 }

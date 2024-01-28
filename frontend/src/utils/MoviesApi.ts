@@ -1,16 +1,14 @@
-import { IMovieBit, IMoviesApiPrors } from "../types/types";
-import { BASE_URL } from "./constants";
-import { testData } from "./functions";
+import { IMovieBit, IMoviesApiPrors } from '../types/types';
+import { BASE_URL } from './constants';
+import { testData } from './functions';
 
-function MoviesApi({ baseUrl, headers, }: IMoviesApiPrors) {
-
+function MoviesApi({ baseUrl, headers }: IMoviesApiPrors) {
   const getMovies = () => {
     return fetch(baseUrl, {
       method: 'GET',
-      headers: { ...headers }
-    })
-      .then(res => testData<IMovieBit[]>(res));
-  }
+      headers: { ...headers },
+    }).then((res) => testData<IMovieBit[]>(res));
+  };
 
   return { getMovies };
 }

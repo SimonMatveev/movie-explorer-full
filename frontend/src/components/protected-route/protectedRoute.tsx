@@ -9,14 +9,18 @@ interface IProtectedRouteProps {
   children: ReactNode;
 }
 
-const ProtectedRoute: FC<IProtectedRouteProps> = ({ onlyUnauth, isLoading, children }) => {
+const ProtectedRoute: FC<IProtectedRouteProps> = ({
+  onlyUnauth,
+  isLoading,
+  children,
+}) => {
   const currentUser = useContext(CurrentUserContext);
-  if (isLoading) return (<Preloader />);
+  if (isLoading) return <Preloader />;
   if ((onlyUnauth && !currentUser) || (!onlyUnauth && currentUser)) {
-    return (<>{children}</>);
+    return <>{children}</>;
   } else {
-    return (<Navigate to='/' />);
+    return <Navigate to='/' />;
   }
-}
+};
 
 export default ProtectedRoute;

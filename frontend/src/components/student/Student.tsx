@@ -12,14 +12,25 @@ const Student: FC = () => {
           <p className='student__name'>Глеб</p>
           <p className='student__description'>Фронтенд-разработчик, 24 года</p>
           <p className='student__text'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio consequatur laboriosam, magni eius nam aspernatur? Corporis incidunt et porro? Error harum eaque optio, molestias sunt deleniti autem pariatur accusamus facilis. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
+            consequatur laboriosam, magni eius nam aspernatur? Corporis incidunt et porro?
+            Error harum eaque optio, molestias sunt deleniti autem pariatur accusamus
+            facilis. Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </p>
-          <a className='student__github' href='https://github.com/SimonMatveev' target='_blank'>Github</a>
-          <div className='student__img-container'><img className='student__img' src={photo} alt='Фото' /></div>
+          <a
+            className='student__github'
+            href='https://github.com/SimonMatveev'
+            target='_blank'
+          >
+            Github
+          </a>
+          <div className='student__img-container'>
+            <img className='student__img' src={photo} alt='Фото' />
+          </div>
         </div>
       </div>
-    </section >
+    </section>
   );
-}
+};
 
 export default Student;

@@ -30,19 +30,24 @@ function getCurrentUser(req, res, next) {
 }
 
 function createUser(req, res, next) {
-  const {
-    name, email, password,
-  } = req.body;
-  bcrypt.hash(password, 10)
-    .then((hash) => User.create({
-      name, email, password: hash,
-    }))
-    .then((user) => res.status(201).send({
-      data: {
-        name: user.name,
-        email: user.email,
-      },
-    }))
+  const { name, email, password } = req.body;
+  bcrypt
+    .hash(password, 10)
+    .then((hash) =>
+      User.create({
+        name,
+        email,
+        password: hash,
+      })
+    )
+    .then((user) =>
+      res.status(201).send({
+        data: {
+          name: user.name,
+          email: user.email,
+        },
+      })
+    )
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new DataError(CREATE_USER_ERR));
@@ -53,10 +58,14 @@ function createUser(req, res, next) {
 function updateUser(req, res, next) {
   const { name, email } = req.body;
 
-  User.findByIdAndUpdate(req.user._id, { name, email }, {
-    new: true,
-    runValidators: true,
-  })
+  User.findByIdAndUpdate(
+    req.user._id,
+    { name, email },
+    {
+      new: true,
+      runValidators: true,
+    }
+  )
     .then((user) => res.send({ data: user }))
     .catch((err) => {
       if (err.name === 'ValidationError') {
@@ -70,7 +79,10 @@ function login(req, res, next) {
 
   return User.findUserByCredentials(email, password)
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : JWT_SECRET_DEV);
+      const token = jwt.sign(
+        { _id: user._id },
+        NODE_ENV === 'production' ? JWT_SECRET : JWT_SECRET_DEV
+      );
       res.cookie('jwt', token, {
         maxAge: 3600000 * 24 * 7,
         httpOnly: true,
@@ -80,7 +92,7 @@ function login(req, res, next) {
           name: user.name,
           email: user.email,
           _id: user._id,
-        }
+        },
       });
     })
     .catch(next);

@@ -16,7 +16,6 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
-
 }
 
 .header__item_mobile {
@@ -40,11 +39,11 @@
   font-weight: 400;
   line-height: 1.29;
   text-decoration: none;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .header__link:hover {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .header__link_profile {
@@ -77,11 +76,11 @@
   font-size: 12px;
   font-weight: 500;
   line-height: 1.33;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .header__link_enter:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .header__link_active {
@@ -125,7 +124,7 @@
     height: 100vh;
     max-width: 520px;
     width: 70%;
-    transition: all .3s;
+    transition: all 0.3s;
     background-color: white;
     flex-direction: column;
     padding: 159px 30px 92px 30px;
@@ -145,7 +144,7 @@
 
   .header__links_active::before {
     content: '';
-    opacity: .3;
+    opacity: 0.3;
   }
 
   .header__link_auth {

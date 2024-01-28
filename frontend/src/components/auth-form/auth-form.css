@@ -29,7 +29,7 @@
 }
 
 .auth__input-name {
-  color: #A0A0A0;
+  color: #a0a0a0;
   font-family: 'Inter', 'Arial', 'sans-serif';
   font-size: 10px;
   font-style: normal;
@@ -57,7 +57,7 @@
   font-weight: 400;
   line-height: normal;
   border-radius: 8px;
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
   border: none;
 }
 
@@ -69,7 +69,7 @@
   position: absolute;
   left: 0;
   top: calc(100% + 5px);
-  color: #FF4062;
+  color: #ff4062;
   font-family: 'Inter', 'Arial', 'sans-serif';
   font-size: 10px;
   font-style: normal;
@@ -88,7 +88,7 @@
 .auth__btn {
   margin-top: auto;
   margin-bottom: 16px;
-  color: #FFF;
+  color: #fff;
   text-align: center;
   font-family: 'Inter', 'Arial', 'sans-serif';
   font-size: 14px;
@@ -100,16 +100,16 @@
   padding: 15px 0;
   border: none;
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .auth__btn:not(:disabled):hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .auth__btn_disabled {
-  background-color: #F8F8F8;
-  color: #C2C2C2;
+  background-color: #f8f8f8;
+  color: #c2c2c2;
 }
 
 .auth__subtext {
@@ -121,7 +121,7 @@
 
 .auth__question {
   margin: 0;
-  color: #A0A0A0;
+  color: #a0a0a0;
   text-align: center;
   font-family: 'Inter', 'Arial', 'sans-serif';
   font-size: 14px;
@@ -139,11 +139,11 @@
   font-weight: 400;
   line-height: normal;
   text-decoration: none;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .auth__link:hover {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .auth__api-error {
@@ -152,7 +152,7 @@
   top: calc(100% - 100px);
   text-align: center;
   width: 100%;
-  color: #FF4062;
+  color: #ff4062;
   font-family: 'Inter', 'Arial', 'sans-serif';
   font-size: 14px;
   font-style: normal;
@@ -163,7 +163,7 @@
   text-overflow: ellipsis;
 }
 
-@media screen and (max-width:768px) and (min-width: 426px) {
+@media screen and (max-width: 768px) and (min-width: 426px) {
   .auth {
     max-height: 560px;
     padding-top: 0;

@@ -1,7 +1,5 @@
 const router = require('express').Router();
-const {
-  getCurrentUser, updateUser,
-} = require('../controllers/users');
+const { getCurrentUser, updateUser } = require('../controllers/users');
 const { validatePatchMe } = require('../middlewares/validate');
 
 router.get('/me', getCurrentUser);

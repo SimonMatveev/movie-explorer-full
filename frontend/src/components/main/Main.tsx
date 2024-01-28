@@ -1,10 +1,10 @@
-import FirstScreen from "../first-screen/FirstScreen";
-import About from "../about/About";
-import NavigationAbout from "../navigation-about/navigationAbout";
-import Portfolio from "../portfolio/Portfolio";
-import Student from "../student/Student";
-import Tech from "../tech/Tech";
-import { FC } from "react";
+import FirstScreen from '../first-screen/FirstScreen';
+import About from '../about/About';
+import NavigationAbout from '../navigation-about/navigationAbout';
+import Portfolio from '../portfolio/Portfolio';
+import Student from '../student/Student';
+import Tech from '../tech/Tech';
+import { FC } from 'react';
 
 const Main: FC = () => {
   return (
@@ -17,6 +17,6 @@ const Main: FC = () => {
       <Portfolio />
     </main>
   );
-}
+};
 
 export default Main;

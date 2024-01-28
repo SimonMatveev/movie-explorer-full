@@ -1,6 +1,6 @@
 import './logo.css';
 import { Link } from 'react-router-dom';
-import logo from '../../images/logo.svg'
+import logo from '../../images/logo.svg';
 import { FC } from 'react';
 
 const Logo: FC = () => {
@@ -9,6 +9,6 @@ const Logo: FC = () => {
       <img className='logo__img' src={logo} alt='Логотип' />
     </Link>
   );
-}
+};
 
 export default Logo;

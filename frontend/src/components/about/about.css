@@ -46,7 +46,7 @@
   margin: 0;
   text-align: center;
   box-sizing: border-box;
-  color: #A0A0A0;
+  color: #a0a0a0;
   font-family: 'Inter', 'Arial', sans-serif;
   font-size: 14px;
   font-style: normal;
@@ -60,7 +60,7 @@
 }
 
 .about__table-cell_col_gray {
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   color: #000;
 }
 
@@ -98,11 +98,9 @@
   .about__table-cell_data {
     padding-top: 14px;
   }
-
 }
 
 @media screen and (max-width: 600px) {
-
   .about {
     padding-left: 18px;
     padding-right: 18px;
